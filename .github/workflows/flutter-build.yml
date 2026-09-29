@@ -388,6 +388,7 @@ jobs:
           #    vcpkg-triplet: x86-windows-static,
           #  }
           # - { target: aarch64-pc-windows-msvc, os: windows-2022 }
+          - { target: x86_64-pc-windows-msvc, os: windows-2022 }
     steps:
       - name: Export GitHub Actions cache environment variables
         uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
@@ -862,7 +863,7 @@ jobs:
     needs:
       - build-for-macOS
       - build-for-windows-flutter
-      - build-for-windows-sciter
+      #- build-for-windows-sciter
     runs-on: ubuntu-latest
     if: ${{ inputs.upload-artifact }}
     steps:
